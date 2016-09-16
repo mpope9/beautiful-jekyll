@@ -1,14 +1,15 @@
 ---
 layout: page
-title: Matt Pope | GitHub
-subtitle: This is where I will tell my friends way too much about me
+title: Matt Pope | Github
+maintitle: Matthew Pope
+subtitle: This is where you can learn way too much about me
 ---
 
 <div class="posts-list">
   {% for post in paginator.posts %}
   <article class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-	  <h2 class="post-title">{{ post.title }}</h2>
+	  <h2 class="post-maintitle">{{ post.maintitle }}</h2>
 
 	  {% if post.subtitle %}
 	  <h3 class="post-subtitle">
