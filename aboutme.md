@@ -1,16 +1,21 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Why you wouldn't want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Matthew Pope.  I currently attend CSU Chico, and plan to 
+graduate in the Spring of 2017.  On this site you can see:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- What I've done
+- Who I am
+- What I'm about
 
 What else do you need?
 
-### my history
+### My history
+I was born in beautiful San Jose, California.  I was quickly moved to
+Sacramento, California at the age of two.  I lived there until the
+age of 17.  I then moved to Chico, California, where I am now 
+focusing on obtaining my BS in Computer Science.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
