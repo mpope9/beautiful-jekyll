@@ -14,11 +14,11 @@ The washer and dryer were on the third story of the house.  Which, in my opinon,
 
 I soon devised a solution.  Onhand I had my Android Phone, and a RaspberryPi.  I got to work.
 
-What I devised was a very simple setup.  I duct-taped the RPi to the washer.  Attached to a GPIO port of the RPi was a vibration sensor<sup>[[1]](#1)<sup>.  This worked spectacularly.  Every vibration set off the sensor!
+What I devised was a very simple setup.  I duct-taped the RPi to the washer.  Attached to a GPIO port of the RPi was a vibration sensor<sup>[[1]](#1)</sup>.  This worked spectacularly.  Every vibration set off the sensor!
 
 On the RPi I installed the appache web server.  With the help of the RPIO Python library I had the power to change the homepage of the server whenever the RPi recieved an impulse.  Set on a 30 second interval, I now had a reliable way to tell if the server was on.
 
-This project took way too little time<sup>[[2]](#2)<sup>.  I was not fond of hitting the static IP of the RPi through my browser, at all.  The solution?  A simple android app.  It ended up being basically one view that connected to the static IP of the RPi, and displayed the homepage.
+This project took way too little time<sup>[[2]](#2)</sup>.  I was not fond of hitting the static IP of the RPi through my browser, at all.  The solution?  A simple android app.  It ended up being basically one view that connected to the static IP of the RPi, and displayed the homepage.
 
 This worked.  It worked very well.  Though, there was a problem.  It was the enviornment, and not the development enviornment.  I soon burned through 4 vibration sensors, each getting knocked off by a stray sock or shirt fresh out of the washer.  The fruits of my labor were wasted.  I'm surpised the exposed RPi was not fried.
 
