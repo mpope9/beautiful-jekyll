@@ -1,6 +1,7 @@
 ---
 layout: post
-title: IsMyWasherRunning, The washing machine app
+title: IsMyWasherRunning?
+maintitle: IsMyWasherRunning, The washing machine app
 tags: [android, apache, washing, machine, january]
 ---
 
