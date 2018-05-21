@@ -6,7 +6,7 @@ tags: [c, assemby, may, 2018]
 ---
 
 ![]()
-Frequently I have heard to avoid `goto` because code will become an unreadable mess.  This has been burned into my brain, I have never considered using a `goto`.  Until that foggy, grey day.  Some...spectre attached itsself to me.  It was summoned from the incantation I foolishly muttered, deep within the GCC documentation.  
+Frequently I have heard to avoid `goto` because code will become an unreadable mess.  This has been burned into my brain, and I have never considered using a `goto`.  Until that foggy, grey day.  Some...spectre attached itsself to me, summoned from the incantation I foolishly muttered, found deep within the GCC documentation.  
 
 I recall that `goto` is fine if trying to break from a nested loop, but if one was to run code based on conditions things fall apart quite quickly.  This is why loops were created, so the `goto` can be avoided, so said Dijkstra, so shall it be<sup>[[2]](https://www.cs.utexas.edu/users/EWD/ewd02xx/EWD215.pdf)</sup>  It soon rested in legends.  Yet I was interested on just how unreadable using `goto` can become.  What is the most inapropriate use of the keyowrd?  `goto`'s syntax officially is `goto label`<sup>[[1]](http://en.cppreference.com/w/cpp/language/goto)</sup>.  This is all good, but what type is a label?  
 
