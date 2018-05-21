@@ -8,8 +8,11 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
   </head>
 <body>
-  <div class="container">
-    {{ content }}
+  <div class="container_post">
+    {{ content | replace: "µµ", "&emsp;" }}
   </div>
+  <div class="footer">
+  |<a href="/"> ~ </a>|
+ </div> 
 </body>
 </html>

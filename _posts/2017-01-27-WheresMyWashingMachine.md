@@ -1,9 +1,21 @@
 ---
-layout: post
-title: IsMyWasherRunning?
-maintitle: IsMyWasherRunning, The washing machine app
-tags: [android, apache, washing, machine, january]
+title: "IsMyWasherRunning?"
+description: "I was tired of checking if the machine was running.  So I did something about it."
+author: "Matthew Pope"
 ---
+
+<style>
+  img {
+  border: solid grey 1px;
+}
+
+  h5 {
+  text-align: center;
+  color: #000;
+  text-decoration: underline;
+  margin-top: -7px;
+}
+</style>
 
 ![castle](https://localwiki.org/chico/the%20castle/_files/Castle.jpg)
 
@@ -31,6 +43,6 @@ Keep it real,
 
 Matthew
 
-#### SuperScripts
+### SuperScripts
 <sup id="1">[1]</sup> Heres a [link](https://www.adafruit.com/products/1766?gclid=CPTf_oWh49ECFYKJfgodqswE9Q)<br />
 <sup id="2">[2]</sup> It took around an hour of writing the python, and 3 days to get the damn sensor working.
