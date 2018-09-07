@@ -8,7 +8,7 @@ tags: [android, java, thread-safe, september, 2018]
 I found that sometimes I want to disable most parts of my UI, but have certain elements remain locked in their state when this happens.  As an example, I want a stop button to be still clickable when my start button is disabled when a simulation running.
 
 The Android `View` doesn't seem to have an easy way to do this, so I decided to build my own.
-Basically is a wrapper class that provides a thread safe way of preventing an certain `Views` to be tampered with while changing the whole UI's state/
+Basically is a wrapper class that provides a thread safe way of preventing an certain `Views` to be tampered with while changing the whole UI's state.
 
 Here is a small class that will get us started.
 
@@ -90,5 +90,7 @@ lockablePhoneNumber.setUnlocked();
 ```
 
 Hope this was helpful.
+
+Keep it real,
 
 Matthew
