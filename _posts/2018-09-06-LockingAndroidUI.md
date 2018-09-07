@@ -38,6 +38,10 @@ public class LockableElement {
         locked.set(false);
         toggleEnabled(true);
     }
+
+    boolean isLocked() {
+        return locked.get();
+    }
 }
 ```
 
@@ -65,7 +69,7 @@ uiList.add(lockableFirstName);
 
 public void toggleUIState(List<LockableElement> uiList) {
     for(LockableElement lockableElement : uiList) {
-        if(!lockableElement.getLock()) {
+        if(!lockableElement.isLocked()) {
 	    lockableElement.toggleEnabled(disableUI);
         }
     }
