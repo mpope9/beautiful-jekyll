@@ -7,6 +7,8 @@ layout: default_post
 ## ..myself #
 
 *  Software engineer based out of San Francisco.
+  *  Real time C/C++ video game systems.
+  *  Erlang and Elixir.
 *  CSU Chico graduate.
 *  Proud father of 2 plants.
 *  I frequently hop around side projects.
