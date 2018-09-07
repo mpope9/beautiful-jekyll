@@ -65,7 +65,7 @@ uiList.add(lockableFirstName);
 
 public void toggleUIState(List<LockableElement> uiList) {
     for(LockableElement lockableElement : uiList) {
-        if(!lockableElement.locked) {
+        if(!lockableElement.getLock()) {
 	    lockableElement.toggleEnabled(disableUI);
         }
     }
