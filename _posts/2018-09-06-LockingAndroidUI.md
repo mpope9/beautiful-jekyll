@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Selectivly Locking An Android UI
-maintitle: Selectivly Locking An Android UI
+title: Selectively Locking An Android UI
+maintitle: Selectively Locking An Android UI
 tags: [android, java, thread-safe, september, 2018]
 ---
 
@@ -45,7 +45,7 @@ public class LockableElement {
 }
 ```
 
-So to set a UI element to be disabled before, during, and after disabling the entire UI, we can create a locked element like this from an acivity:
+So to set a UI element to be disabled before, during, and after disabling the entire UI, we can create a locked element like this from an activity:
 ```
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ protected void onCreate(Bundle savedInstanceState) {
 ```
 Simple enough.  This element is currently locked.
 
-Now, in our activity we need an easy way to take care of locking/unlocking all of the UI items.  We can achive this by using a simple list, and checking if the element should be disabled.
+Now, in our activity we need an easy way to take care of locking/unlocking all of the UI items.  We can achieve this by using a simple list, and checking if the element should be disabled.
 
 ```
 boolean disableUI = false;
@@ -70,7 +70,7 @@ uiList.add(lockableFirstName);
 public void toggleUIState(List<LockableElement> uiList) {
     for(LockableElement lockableElement : uiList) {
         if(!lockableElement.isLocked()) {
-	    lockableElement.toggleEnabled(disableUI);
+            lockableElement.toggleEnabled(disableUI);
         }
     }
     disableUI = !disableUI;
