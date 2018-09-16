@@ -44,7 +44,7 @@ Some explination of the incantation:
 
 Next we must brew some Java to `mix` with our Elixr before we assemble our Android.
 
-Our two languages are distant, their ways of life are incompatble.  The `JInterface`<sup>[[3]](http://erlang.org/doc/apps/jinterface/jinterface_users_guide.html)</sup>, provided in our erlang installation is the hermit who'll play translator.  Mine resided quitetly and full of exceitement, waiting to be utilized in `/usr/lib/erlang/lib/jinterface-1.9/priv`.  Yours is waiting too, just as quietly but as equally excited.
+Our two languages are distant, their ways of life are incompatble.  The `JInterface`<sup>[[3]](http://erlang.org/doc/apps/jinterface/jinterface_users_guide.html)</sup>, provided in our erlang installation is the hermit who'll play translator.  Mine resided quitetly and full of exceitement, waiting to be utilized in `/usr/lib/erlang/lib/jinterface-1.9/priv`.  Yours is waiting too, just as quietly but equally as excited.
 
 ```java
 import com.ericsson.opt.erlang.*
