@@ -12,7 +12,7 @@ Basically is a wrapper class that provides a thread safe way of preventing an ce
 
 Here is a small class that will get us started.
 
-```
+```java
 public class LockableElement {
 
     public View view;
@@ -46,7 +46,7 @@ public class LockableElement {
 ```
 
 So to set a UI element to be disabled before, during, and after disabling the entire UI, we can create a locked element like this from an activity:
-```
+```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -60,7 +60,7 @@ Simple enough.  This element is currently locked.
 
 Now, in our activity we need an easy way to take care of locking/unlocking all of the UI items.  We can achieve this by using a simple list, and checking if the element should be disabled.
 
-```
+```java
 boolean disableUI = false;
 List<LockableElement> uiList = new ArrayList<>();
 uiList.add(lockablePhoneNumber);
@@ -89,7 +89,7 @@ Example of other elements being toggled by locking.
 ![Enabled email](/assets/img/EmailEnabled.jpg)
 
 Based on certain events, the elements can be unlocked easily, like so:
-```
+```java
 lockablePhoneNumber.setUnlocked();
 ```
 
