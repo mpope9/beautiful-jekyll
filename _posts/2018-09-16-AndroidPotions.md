@@ -5,7 +5,7 @@ maintitle: Using elixir on android
 tags: [android, java, elixir, erlang, september, 2018]
 ---
 
-My eyes snap open.  The room is dark and the wind, who has sauntered into my room finding a new home, is flagging the backout curtains wildly.  A cold chill is running down my spine.  I had a dream, an Android that learned alchemy.  I must teach it how to `mix` potions.  How to share its cookies with Elixir.  There is work to be done.
+My eyes snap open.  The room is dark and the wind, who has sauntered into my room finding a new home, is flapping the blackout curtains wildly.  A cold chill is running down my spine.  I had a dream, an Android that learned alchemy.  I must teach it how to `mix` potions.  How to share its cookies with Elixir.  There is work to be done.
 
 To get started, we'll build an addition calculator that only accepts `x + y`.  A simple GenServer<sup>[[1]](https://hexdocs.pm/elixir/GenServer.html)</sup> will work wonderfully for our example.  Plugging this into a `mix` project and a `Supervisor` to register its name locally as `:calculator` is quite easy<sup>[[2]](https://hexdocs.pm/elixir/Supervisor.html#content)</sup>.
 
