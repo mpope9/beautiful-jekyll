@@ -5,7 +5,7 @@ maintitle: Streaming From Redis in Java
 tags: [java, redis, september, 2019]
 ---
 
-Recently I've learned about Redis' [streaming feature](https://redis.io/topics/streams-intro).  The benefit of using this over something like Kafka for a log/stream is that managed Redis is quite common across cloud providers.  Using the consumer groups is also an easy way of reading from the stream using multiple consumers without having them step on each other's feet doesn't require much configuration.  Knowing we can stream data, I wanted to use Java's streams and functional constructs to make a mess of thing.
+Recently I've learned about Redis' [streaming feature](https://redis.io/topics/streams-intro).  The benefit of using this over something like Kafka for a log/stream is that managed Redis is quite common across cloud providers.  Using the consumer groups is also an easy way of reading from the stream using multiple consumers without having them step on each other's feet doesn't require much configuration.  Knowing we can stream data, I wanted to use Java's streams and functional constructs to make a mess of things.
 
 ## Setup
 To interface with Redis, I've found that [Redisson](https://github.com/redisson/redisson/tree/master/redisson-spring-boot-starter#spring-boot-starter) is a great library to use, and integrates with Spring Boot well.  It has some other powerful data structures, but its streaming interface is promising.
