@@ -174,4 +174,86 @@ And there it is.  `RStream`'s `readGroupAsync` has a count parameter, so these c
 
 Hope it was helpful.
 
+### EDIT
+I've realized that you _don't_ infact have to use a timer with this!  If you provide a timeout to the readGroupAsync then Redis blocks.  Now, it doesn't block in the same manner that it does for the `KEYS` Redis command, where it locks up based on the size of the key space.  This just spins on the client's connection.  So the revised code can be found below:
+
+```java
+
+``ce
+public class RedisStreamService {
+    
+    private static final String BANKRUPTCY_101_STREAM = "testStream";
+    private static final String GROUP_NAME = "testGroup";
+    private static final String CONSUMER_NAME = "testConsumer"; 
+    private static final int READ_INTERVAL = 10000;
+
+    private RedissonClient redisClient;
+    
+    
+    ExecutorService executorService ;
+    Runnable unlockSemaphoreRunnable;
+    
+    public RedisStreamService(RedissonClient redisClient) {
+        this.redisClient = redisClient;
+
+        executorService = Executors.newCachedThreadPool();
+    }
+    
+    @EventListener(ContextRefreshedEvent.class)
+    public void initStream() {
+
+        RStream<byte[], byte[]> rstream = redisClient.getStream(BANKRUPTCY_101_STREAM);
+        RStream<byte[], byte[]> rstream = redisClient.getStream(BANKRUPTCY_101_STREAM);
+
+        try {
+            rstream.createGroup(GROUP_NAME);
+        } catch  (RedisException e) {
+            LOG.info("Redis group {} already exists.", GROUP_NAME);
+        }
+
+        executorService.submit( () ->
+            Stream.generate( () -> {
+                return rstream.readGroupAsync(GROUP_NAME, CONSUMER_NAME, READ_INTERVAL, TimeUnit.SECONDS);
+            })
+            .parallel()
+            .forEach(future -> {
+                future.thenAccept(res -> {
+                    Map<StreamMessageId, Map<byte[], byte[]>> result =
+                        (Map<StreamMessageId, Map<byte[], byte[]>>) res;
+
+                    if (result.isEmpty()) {
+                        return;
+                    }
+                    StreamMessageId id = result
+                        .entrySet()
+                        .iterator()
+                        .next()
+                        .getKey();
+
+                    Map<byte[], byte[]> resultMap = result
+                        .entrySet()
+                        .iterator()
+                        .next()
+                        .getValue();
+
+                    byte[] value = resultMap
+                        .entrySet()
+                        .iterator()
+                        .next()
+                        .getValue();
+
+                     LOG.info("Recieved message from stream: " + new String(value));
+                     rstream.ack(GROUP_NAME, id);
+                     }).exceptionally(exception -> {
+                         LOG.error("Exception raised while processing redis stream {}",
+                     exception.getCause().toString());
+                                        return null;
+                     });
+             }));
+        }
+
+```
+
+Hopefully _this_ is more helpful.
+
 Matt
